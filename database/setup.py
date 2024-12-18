@@ -1,7 +1,7 @@
-from .connection import get_db_connection
+from .connection import Connection
 
 def create_tables():
-    conn = get_db_connection()
+    conn = Connection.get_db_connection()
     cursor = conn.cursor()
     
     cursor.execute('''

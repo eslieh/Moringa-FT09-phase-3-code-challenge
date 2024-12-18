@@ -1,5 +1,5 @@
 from database.setup import create_tables
-from database.connection import get_db_connection
+from database.connection import Connection
 from models.article import Article
 from models.author import Author
 from models.magazine import Magazine
@@ -16,7 +16,7 @@ def main():
     article_content = input("Enter article content: ")
 
     # Connect to the database
-    conn = get_db_connection()
+    conn = Connection.get_db_connection()
     cursor = conn.cursor()
 
 
